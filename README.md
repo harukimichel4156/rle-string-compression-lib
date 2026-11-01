@@ -16,3 +16,10 @@ The awkward edge: because a digit directly precedes the character it counts, lit
 The format writes single characters without a count, so `compress("abc")` returns `"abc"`, not `"1a1b1c"`. Malformed compressed input raises `RLEError`, a subclass of `ValueError`.
 
 Exported names: `compress`, `decompress`, `RLEError`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
