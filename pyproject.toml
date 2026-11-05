@@ -1,6 +1,6 @@
 [project]
 name = "rle-string-compression-lib"
-version = "0.1.0"
+version = "0.1.1"
 description = "Run-length encoder/decoder for strings that escapes digit runs to avoid ambiguity during decompression."
 requires-python = ">=3.10"
 dependencies = []
